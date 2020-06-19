@@ -21,12 +21,13 @@ def count_th(word):
 def count_th_in_word(word, char=0):
     if not word:
         return char
-    elif word[0:2] == 'th':
+    # if the len(word) ==  2 char and theses chars are "th"
+    elif len(word[0:2]) == 2 and word[0:2] == 'th':
         char += 1
-        # get all but not the first 2 char using a slice
+        # start from index 3 , we already have 2 char
         return count_th_in_word(word[2:], char)
     else:
-
+        # then start from the begining
         return count_th_in_word(word[1:], char)
 
 
